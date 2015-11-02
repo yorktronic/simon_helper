@@ -12,17 +12,32 @@ colors = {1: 'Blue', 2: 'Green', 3: 'Yellow', 4: 'Red'}
 user = ""
 idx = 0
 
-# Instructions
-print ("Welcome to the Simon helper. If you have trouble remembering after 15" +
-		" or so steps in the game Simon, then this will be of use to you \n")
-print ("At the start of your Simon game, enter 1, 2, 3, or 4 at the promt for the" +
-		" solver to store the color sequence. \n Blue = 1 \n Green = 2 \n Yellow = 3 \n" +
-			" Red = 4 \n")
+# Function that prints the user input options in a table
+def colprint(*args):
+    for i in range(len(args)):
+        print args[i] + "\t" ,
 
-print ("Input 'r' at the prompt to return to the beginning and then press <ENTER> " +
-			"and the helper will tell you the sequence, step by step. Input 'q' to quit.\n")
+    print
 
-print ("Input 'a' at the prompt and the helper will print out the entire sequence.")
+# Function containing the instructions
+def instructions():
+	print ("Welcome to the Simon helper. If you have trouble remembering after 15" +
+			" or so steps in the game Simon, then this will be of use to you \n")
+	print ("At the start of your Simon game, enter 1, 2, 3, or 4 at the promt for the" +
+			" solver to store the color sequence. See below for the color legend.\n")
+	print ("User input options\n")
+
+	colprint("1", "Blue")
+	colprint("2", "Green")
+	colprint("3", "Yellow")
+	colprint ("4", "Red")
+	colprint("r", "Replay sequence step-by-step (press ENTER) for each step")
+	colprint("a", "Print all of the steps in the current game")
+	colprint("c", "Clears the current game and restarts with a blank sequence")
+	colprint("q", "Quit")
+
+# Print the instructions for the user
+instructions()
 
 # The helper
 while user != "q":
@@ -40,7 +55,9 @@ while user != "q":
 
 	# Print out the current step, if the user is walking through the steps
 	elif user == "":
-		if idx < len(keys):
+		if not keys:
+			print "The sequence is empty"
+		elif idx < len(keys):
 			print colors[keys[idx]]
 			idx += 1
 		else:
@@ -48,8 +65,14 @@ while user != "q":
 
 	# Print out the entire sequence up to the most recent step
 	elif user == "a":
-		for idy, key in enumerate(keys):
-			print "Step {}: {}".format(idy+1, colors[key])
+		if not keys:
+			print "The sequence is empty"
+		else:
+			for idy, key in enumerate(keys):
+				print "Step {}: {}".format(idy+1, colors[key])
 
-
-
+	# Clears the sequence if the user wants to start a new game w/o restarting script
+	elif user == "c":
+		del keys[:]
+		print "SEQUENCE CLEARED, STARTING NEW GAME \n"
+		instructions()
