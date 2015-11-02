@@ -1,10 +1,18 @@
-# Script to help me beat the simon game
+########################################
+#
+# Script that helps a player beat the memory game Simon. Stores each step in the 
+# game and allows the player to replay the steps, either step-by-step or by 
+# printing all the steps.
+#
+########################################
 
+# Stores each step, dictionary for numbers and colors, user input, and list index
 keys = []
 colors = {1: 'Blue', 2: 'Green', 3: 'Yellow', 4: 'Red'}
 user = ""
 idx = 0
 
+# Instructions
 print ("Welcome to the Simon helper. If you have trouble remembering after 15" +
 			" or so steps in the game Simon, then this will be of use to you \n")
 print ("At the start of your Simon game, enter 1, 2, 3, or 4 at the promt for the" +
@@ -16,6 +24,7 @@ print ("Input 'r' at the prompt to return to the beginning and then press <ENTER
 
 print ("Input 'a' at the prompt and the helper will print out the entire sequence.")
 
+# The helper
 while user != "q":
 	
 	# Prompt the user for input and make whatever the input is lowercase
@@ -30,7 +39,7 @@ while user != "q":
 		keys.append(int(user))
 
 	# Print out the current step, if the user is walking through the steps
-	elif user is "":
+	elif user == "":
 		if idx < len(keys):
 			print colors[keys[idx]]
 			idx += 1
