@@ -16,9 +16,9 @@ print ("Input 'r' at the prompt to return to the beginning and then press <ENTER
 
 print ("Input 'a' at the prompt and the helper will print out the entire sequence.")
 
-while user != ("q" or "Q"):
+while user != "q":
 	
-	user = raw_input(': ') #the prompt
+	user = (raw_input(': ').lower()) #the prompt
 
 	# Reset the start of the sequence to the beginning, for the user to replay it 
 	if user == "r":
