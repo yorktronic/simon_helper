@@ -14,9 +14,9 @@ idx = 0
 
 # Instructions
 print ("Welcome to the Simon helper. If you have trouble remembering after 15" +
-			" or so steps in the game Simon, then this will be of use to you \n")
+		" or so steps in the game Simon, then this will be of use to you \n")
 print ("At the start of your Simon game, enter 1, 2, 3, or 4 at the promt for the" +
-			" solver to store the color sequence. \n Blue = 1 \n Green = 2 \n Yellow = 3 \n" +
+		" solver to store the color sequence. \n Blue = 1 \n Green = 2 \n Yellow = 3 \n" +
 			" Red = 4 \n")
 
 print ("Input 'r' at the prompt to return to the beginning and then press <ENTER> " +
@@ -29,7 +29,7 @@ while user != "q":
 	
 	# Prompt the user for input and make whatever the input is lowercase
 	user = (raw_input(': ').lower())
-
+	
 	# Reset the list index to zero, so the user can replay each step 
 	if user == "r":
 		idx = 0
