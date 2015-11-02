@@ -7,5 +7,4 @@ This is technically cheating, but if you have some device that requires you to r
 ## Requirements ##
 
 Python
-
 Some form of the game Simon
