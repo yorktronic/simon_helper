@@ -12,7 +12,7 @@ colors = {1: 'Blue', 2: 'Green', 3: 'Yellow', 4: 'Red'}
 user = ""
 idx = 0
 
-# Function that prints the user input options in a table
+# Function that prints the user input options as a table
 def colprint(*args):
     for i in range(len(args)):
         print args[i] + "\t" ,
