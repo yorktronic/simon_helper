@@ -18,23 +18,24 @@ print ("Input 'a' at the prompt and the helper will print out the entire sequenc
 
 while user != "q":
 	
-	user = (raw_input(': ').lower()) #the prompt
+	# Prompt the user for input and make whatever the input is lowercase
+	user = (raw_input(': ').lower())
 
-	# Reset the start of the sequence to the beginning, for the user to replay it 
+	# Reset the list index to zero, so the user can replay each step 
 	if user == "r":
 		idx = 0
 
-	# Store the user input 
+	# Store the user input if a valid number is provided
 	elif user in ["1", "2", "3", "4"]:
 		keys.append(int(user))
 
-	# Print out the current step, if the user is walking back through the steps
+	# Print out the current step, if the user is walking through the steps
 	elif user is "":
 		if idx < len(keys):
 			print colors[keys[idx]]
 			idx += 1
 		else:
-			print 'End of sequence.'
+			print 'End of sequence'
 
 	# Print out the entire sequence up to the most recent step
 	elif user == "a":
