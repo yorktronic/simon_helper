@@ -6,5 +6,5 @@ This is technically cheating, but if you have some device that requires you to r
 
 ## Requirements ##
 
-Python  
+<a href="https://www.python.org/downloads/" target="_blank">Python</a>  
 Some form of the game Simon
