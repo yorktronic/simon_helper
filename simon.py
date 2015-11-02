@@ -5,7 +5,6 @@ colors = {1: 'Blue', 2: 'Green', 3: 'Yellow', 4: 'Red'}
 user = ""
 idx = 0
 
-
 print ("Welcome to the Simon helper. If you have trouble remembering after 15" +
 			" or so steps in the game Simon, then this will be of use to you \n")
 print ("At the start of your Simon game, enter 1, 2, 3, or 4 at the promt for the" +
@@ -16,8 +15,6 @@ print ("Input 'r' at the prompt to return to the beginning and then press <ENTER
 			"and the helper will tell you the sequence, step by step. Input 'q' to quit.\n")
 
 print ("Input 'a' at the prompt and the helper will print out the entire sequence.")
-
-
 
 while user != ("q" or "Q"):
 	
